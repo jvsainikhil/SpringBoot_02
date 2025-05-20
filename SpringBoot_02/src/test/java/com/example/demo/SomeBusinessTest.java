@@ -54,6 +54,13 @@ class SomeBusinessTest {
 		int actualResult = business.calculateSumUsingDataService();
 		assertEquals(10, actualResult);
 	}
+	@Test
+	public void testCalculateSum() { // test with out stabbing 
+		SomeBusinessImpl business = new SomeBusinessImpl();
+		int actualResult = business.calculateSum(new int[] {1, 2, 3});
+		int expectedResult = 6;
+		assertEquals(expectedResult, actualResult);
+	}
 	
 	
 }
