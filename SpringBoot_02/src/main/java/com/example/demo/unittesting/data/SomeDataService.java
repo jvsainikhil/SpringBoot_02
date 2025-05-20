@@ -1,4 +1,4 @@
-package com.example.demo.business.data;
+package com.example.demo.unittesting.data;
 
 public interface SomeDataService {
 
