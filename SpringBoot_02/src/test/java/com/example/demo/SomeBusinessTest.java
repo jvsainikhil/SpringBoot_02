@@ -9,7 +9,7 @@ import com.example.demo.unittesting.data.SomeDataService;
 
 class SomeBusinessTest {
 	
-	class SomeDataServiceStub implements SomeDataService{
+	class SomeDataServiceStub implements SomeDataService{//---
 
 		@Override
 		public int[] retriveAllData() {
@@ -17,25 +17,22 @@ class SomeBusinessTest {
 			return new int[] {1,2,3};
 		}
 	}
-	class SomeDataServiceEmptyStub implements SomeDataService{
+	class SomeDataServiceEmptyStub implements SomeDataService{//---
 
 		@Override
 		public int[] retriveAllData() {
 			// TODO Auto-generated method stub
 			return new int[] { };
 		}
-		
 	}
-	class SomeDataServiceBigStub implements SomeDataService{
+	class SomeDataServiceBigStub implements SomeDataService{//--
 
 		@Override
 		public int[] retriveAllData() {
 			// TODO Auto-generated method stub
 			return new int[] {1,2,3,4};
 		}
-		
 	}
-
 	@Test
 	public void calculateSum_empty()  {
 		SomeBusinessImpl business = new SomeBusinessImpl();
