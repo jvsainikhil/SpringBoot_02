@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import com.example.demo.businessImpl.SomeBusinessImpl;
+import com.example.demo.unittesting.business.SomeBusinessImpl;
 
 class SomeDataServiceTest {
 
