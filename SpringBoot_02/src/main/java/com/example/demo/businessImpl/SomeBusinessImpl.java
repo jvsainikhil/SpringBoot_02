@@ -1,14 +1,28 @@
 package com.example.demo.businessImpl;
 
+import com.example.demo.business.data.SomeDataService;
+
 public class SomeBusinessImpl {
+	private SomeDataService someDataService;
+
+	public void setSomeDataService(SomeDataService someDataService) {
+		this.someDataService = someDataService;
+	}
+
 	public int calculateSum(int[] data) {
 		int sum = 0;
 		for(int value : data) {
-			if(value < 0) {
-				sum += value;
-			}
-			return sum;
+			sum += value;
 		}
-		return sum;
+		return sum;		
+	}
+
+	public int calculateSumUsingDataService() {
+		int sum = 0;
+		int[] data = someDataService.retriveAllData();
+		for(int value : data) {
+			sum += value;
+		}
+		return sum;		
 	}
 }
