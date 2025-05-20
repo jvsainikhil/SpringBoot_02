@@ -17,20 +17,45 @@ class SomeBusinessTest {
 			return new int[] {1,2,3};
 		}
 	}
+	class SomeDataServiceEmptyStub implements SomeDataService{
+
+		@Override
+		public int[] retriveAllData() {
+			// TODO Auto-generated method stub
+			return new int[] { };
+		}
+		
+	}
+	class SomeDataServiceBigStub implements SomeDataService{
+
+		@Override
+		public int[] retriveAllData() {
+			// TODO Auto-generated method stub
+			return new int[] {1,2,3,4};
+		}
+		
+	}
 
 	@Test
 	public void calculateSum_empty()  {
 		SomeBusinessImpl business = new SomeBusinessImpl();
-		int actualResult = business.calculateSum(new int[] { });
-		assertEquals(0, actualResult);
+		business.setSomeDataService(new SomeDataServiceStub());
+		int actualResult = business.calculateSumUsingDataService();
+		assertEquals(6, actualResult);
 	}
 	@Test
 	public void calculateSumUsingDataService_basic() {
 		SomeBusinessImpl business = new SomeBusinessImpl();
-		business.setSomeDataService(new SomeDataServiceStub());
+		business.setSomeDataService(new SomeDataServiceEmptyStub());
 		int actualResult = business.calculateSumUsingDataService();
-		int expectedResult = 6;
-		assertEquals(expectedResult, actualResult);
+		assertEquals(0, actualResult);
+	}
+	@Test
+	public void calculateSum_empty01()  {
+		SomeBusinessImpl business = new SomeBusinessImpl();
+		business.setSomeDataService(new SomeDataServiceBigStub());
+		int actualResult = business.calculateSumUsingDataService();
+		assertEquals(10, actualResult);
 	}
 	
 	
