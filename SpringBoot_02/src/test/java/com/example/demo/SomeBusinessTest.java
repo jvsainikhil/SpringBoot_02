@@ -17,7 +17,8 @@ class SomeBusinessTest {
 			return new int[] {1,2,3};
 		}
 	}
-	class SomeDataServiceEmptyStub implements SomeDataService{//---
+	class SomeDataServiceEmptyStub implements SomeDataService{
+		//---stubs are not maintainable so we are using mokito 
 
 		@Override
 		public int[] retriveAllData() {
