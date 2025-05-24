@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import com.example.demo.unittesting.business.SomeBusinessImpl;
@@ -13,11 +14,18 @@ class SomeBusinessMockTest {
 	SomeBusinessImpl business = new SomeBusinessImpl();//This line in common in all the test cases
 	SomeDataService dataServiceMock= mock(SomeDataService.class);//This line in common in all the test cases
 	
+	@BeforeEach
+	//business.setSomeDataService(dataServiceMock);//to add this line we need to use @BeforeEach
+	public void before(){
+		business.setSomeDataService(dataServiceMock);
+	}
+
+	
 	@Test
 	public void calculateSum_empty()  {
 		//we want return this --> dataServiceMock retriveAllData new int[] {1,2,3} --> need to define it 
 		when(dataServiceMock.retriveAllData()).thenReturn(new int[] {1,2,3});
-		business.setSomeDataService(dataServiceMock);
+		business.setSomeDataService(dataServiceMock);//to add this for all is @BeforeEach 
 		int actualResult = business.calculateSumUsingDataService();
 		assertEquals(6, actualResult);
 	}
