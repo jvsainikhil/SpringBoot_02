@@ -4,5 +4,5 @@ public interface SomeDataService {
 
 	int[] retriveAllData();
 	
-	int retriveSpecificData();
+	//int retriveSpecificData();// what happens when we use another method refer in (SomeBusinessSubTest.java)
 }
