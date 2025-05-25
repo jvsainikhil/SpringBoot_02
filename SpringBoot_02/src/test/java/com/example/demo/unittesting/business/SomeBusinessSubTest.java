@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.unittesting.business;
 //sample-01
 import static org.junit.jupiter.api.Assertions.*;
 
