@@ -46,12 +46,15 @@ class SomeBusinessMockTest {
 	@Test
 	public void testCalculateSum() { // test with after stabbing 
 		when(dataServiceMock.retriveAllData()).thenReturn(new int[] {1,2,3,4,1});
-		//business.setSomeDataService(dataServiceMock);
+		business.setSomeDataService(dataServiceMock);
 		int actualResult = business.calculateSumUsingDataService();
 		int expectedResult = 11;
 		assertEquals(expectedResult, actualResult);
 	}	
 }
 
-//observation:
-//
+/*If you are using JUnit 5, in the next lecture use
+
+@ExtendWith(MockitoExtension.class)
+
+instead of @RunWith (MockitoJUnitRunner.class)*/
