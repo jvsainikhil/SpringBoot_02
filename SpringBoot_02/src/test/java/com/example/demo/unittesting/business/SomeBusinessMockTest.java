@@ -35,7 +35,7 @@ public class SomeBusinessMockTest {
 		business.setSomeDataService(dataServiceMock);
 	} 
 */
-	
+
 	@Test
 	 public void calculateSum_basic() {
         when(dataServiceMock.retriveAllData()).thenReturn(new int[] {1, 2, 3});
