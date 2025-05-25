@@ -1,13 +1,12 @@
 package com.example.demo;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class UnitTestingApplicationTests {
+class UnitTestingApplicationMainTest {
 
     @Test
-    void contextLoads() {
-        // The test will pass if the Spring application context starts successfully.
+    void testMainRuns() {
+        UnitTestingApplication.main(new String[] {});
+        // This will pass if no exception is thrown when main() runs.
     }
 }
