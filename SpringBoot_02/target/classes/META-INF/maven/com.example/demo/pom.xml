@@ -30,7 +30,12 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
-
+    <!-- spring-boot-devtools -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+	  <artifactId>spring-boot-devtools</artifactId>
+	  <scope>runtime</scope>
+	</dependency>
     <!-- Spring Boot Starter Test (for testing) -->
     <dependency>
       <groupId>org.springframework.boot</groupId>

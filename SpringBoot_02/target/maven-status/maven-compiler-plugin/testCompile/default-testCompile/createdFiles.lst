@@ -1,2 +1,5 @@
-com\example\demo\HelloControllerTest.class
-com\example\demo\DemoApplicationTests.class
+com\example\demo\SomeBusinessTest.class
+com\example\demo\SomeBusinessTest$SomeDataServiceEmptyStub$SomeDataServiceaddbigStub.class
+com\example\demo\SomeBusinessTest$SomeDataServiceEmptyStub.class
+com\example\demo\SomeBusinessTestmain.class
+com\example\demo\SomeBusinessTest$SomeDataServiceStub.class
