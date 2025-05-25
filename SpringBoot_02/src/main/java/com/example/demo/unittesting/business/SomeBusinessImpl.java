@@ -10,7 +10,7 @@ public class SomeBusinessImpl {
 		this.someDataService = someDataService;
 	}
 
-	public int calculateSum(int[] data) {
+	public int calculateSum(int[] data) { //covered 00
 		int sum = 0;
 		for(int value : data) {
 			sum += value;
@@ -18,7 +18,7 @@ public class SomeBusinessImpl {
 		return sum;		
 	}
 	
-	public int calculateSumUsingDataService() {
+	public int calculateSumUsingDataService() { //covered 01
 		int sum = 0;
 		int[] data= someDataService.retriveAllData();
 		for(int value : data) {

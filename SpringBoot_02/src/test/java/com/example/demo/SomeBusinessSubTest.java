@@ -36,34 +36,43 @@ class SomeBusinessSubTest {
 		}
 	}
 	@Test
-	public void calculateSum_empty()  {
+	public void calculateSum_empty()  {//covered 01  // test with after stabbing
 		SomeBusinessImpl business = new SomeBusinessImpl();
 		business.setSomeDataService(new SomeDataServiceStub());
 		int actualResult = business.calculateSumUsingDataService();
 		assertEquals(6, actualResult);
 	}
 	@Test
-	public void calculateSumUsingDataService_basic() {
+	public void calculateSumUsingDataService_basic() {//covered 01  // test with after stabbing
 		SomeBusinessImpl business = new SomeBusinessImpl();
 		business.setSomeDataService(new SomeDataServiceEmptyStub());
 		int actualResult = business.calculateSumUsingDataService();
 		assertEquals(0, actualResult);
 	}
 	@Test
-	public void calculateSum_empty01()  {
+	public void calculateSum_empty01()  {//covered 01  // test with after stabbing
 		SomeBusinessImpl business = new SomeBusinessImpl();
 		business.setSomeDataService(new SomeDataServiceBigStub());
-		int actualResult = business.calculateSumUsingDataService();
-		assertEquals(10, actualResult);
+		assertEquals(10, business.calculateSumUsingDataService());
 	}
 	@Test
-	public void testCalculateSum() { // test with after stabbing 
+	public void testCalculateSum() { //covered 01 // test with after stabbing 
 		SomeBusinessImpl business = new SomeBusinessImpl();
 		business.setSomeDataService(new SomeDataServiceBigStub());
 		int actualResult = business.calculateSumUsingDataService();
 		int expectedResult = 10;
 		assertEquals(expectedResult, actualResult);
 	}
-	
-	
+	@Test
+	public void testCalculateSum1() {//covered 00
+		SomeBusinessImpl business = new SomeBusinessImpl();//inline 
+		assertEquals(6, business.calculateSum(new int[] {1, 2, 3}));
+	}
+	@Test
+	public void testCalculateSum2() {//covered 00
+		SomeBusinessImpl business = new SomeBusinessImpl();
+		int actualResult = business.calculateSum(new int[] {1, 2, 3, 4});
+		int expectedResult = 10;
+		assertEquals(expectedResult, actualResult);
+	}
 }
